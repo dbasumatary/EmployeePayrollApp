@@ -78,6 +78,7 @@ label{
     color: #42515F;
     opacity: 1;
     font-family: Roboto;
+    margin-right: 20px;
 }
 .input{
     width: 100%;
@@ -104,6 +105,30 @@ label{
     border-radius:50%;
     margin-left: 12px;
  }
+
+/*Increase radio button's size*/
+input[type='radio']{
+    width: 15px;
+    height: 15px;
+}
+/*Increase checkbox size*/
+input[type='checkbox']{
+    width: 15px;
+    height: 15px;
+}
+
+ select {
+    padding: 12px; 
+    border: 2px solid #ccc; 
+    border-radius: 6px; 
+    resize: vertical; 
+    font: normal normal normal 16px Roboto; 
+    letter-spacing:1px; 
+    color: #42515f; 
+    background-color: transparent;
+    margin-right: 20px;
+ }
+
  @media screen and (max-width: 800px) {
     #name {
       box-sizing: border-box;
