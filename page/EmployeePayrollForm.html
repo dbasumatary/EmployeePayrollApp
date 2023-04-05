@@ -11,12 +11,21 @@
 <body>
     <header class="headerContent">
         <div class="logoContent">
-            <img src="../assets/images/logo.png" alt="EmpLogo">
+            <img src="../assets/images/logo.png" alt="EmpLogo" width="30">
             <div>
                 <span class="employee">EMPLOYEE</span><br>
                 <span class="payroll">PAYROLL</span>
             </div>
         </div>
     </header>
+    <div class="formContent">
+        <form class="form" action="#" onsubmit="save();return false">
+            <div class="form-head">Employee Payroll form</div>
+            <div class="row-content">
+                <label class="label text" for="name">Name: </label>
+                <input class="input" type="text" id ="name" name="name" placeholder="Name required">
+            </div>
+        </form>
+    </div>
 </body>
 </html>
