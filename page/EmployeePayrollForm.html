@@ -19,11 +19,12 @@
         </div>
     </header>
     <div class="formContent">
-        <form class="form" action="#" onsubmit="save();return false">
+        <form class="form" action="" onsubmit="save()">
             <div class="form-head">Employee Payroll form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name: </label>
-                <input class="input" type="text" id ="name" name="name" placeholder="Name required">
+                <input class="inputName" type="text" id ="name" name="name" placeholder="Your Name" required>
+                <error-output class="text-error" for="text" id="errormessage"></error-output>
             </div>
             <div class="profileDiv">
                 <label class="label text" for="profile">Profile image:</label>
@@ -56,7 +57,7 @@
                 </div>
             </div>
             <div class="row-content">
-                <label class="label text" for="department">Department:</label>
+                <label class="label text" id="dept" for="department">Department:</label>
                 <div>
                     <input class="checkbox" type="checkbox" id="hr" name="hr" value="HR"> 
                     <label class="text" for="hr">HR</label> 
@@ -71,14 +72,14 @@
                 </div>
             </div>
             <div class="row-content">
-                <label class="label text" for="salary">Choose your salary: </label>
+                <label class="label text" for="salary">Salary: </label>
                 <input class="input" type="range" name="salary" id="salary" min="300000" max="500000" step="100" value="400000"> 
                 <span class="salary-output text" for="salary">400000</span>
             </div>
 
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date:</label>
-                <div> 
+                <div id="dateId"> 
                     <select id="day" name="Day">
                         <option value="1">1</option>
                         <option value="2">2</option> 
@@ -147,7 +148,7 @@
                     </button>
                 </div> 
                 <div class="submit-reset">
-                    <button type="submit" class="button submitButton">Submit</button>
+                    <button type="submit" id="btn" class="button submitButton" onclick="save()">Submit</button>
                     <button type="reset" class="resetButton button">Reset</button> 
                 </div> 
             </div>
