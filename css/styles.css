@@ -78,6 +78,9 @@ label{
 }
 #errormessage{
     color: red;
+    font-style: italic;
+    margin-left: 10px;
+    font-size: 15px;
 }
 .text{
     font-size: 16px;

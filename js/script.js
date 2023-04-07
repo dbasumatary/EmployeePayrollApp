@@ -1,29 +1,32 @@
-//UC8 - Adding event listener for salary
 const salaryValue = document.querySelector('.salary-output');
 const salaryInputRange = document.querySelector('#salary');
-salaryInputRange.addEventListener("input",(event) => {
-    salaryValue.textContent = salaryInputRange.value;
-});
-
 const nameInput = document.querySelector('#name');
 const nameError = document.querySelector('#errormessage');
 const notes = document.querySelector('#notes');
 
-// UC10 - User needs to enter a valid first name,
-// First name should start with capital letters and need to have minimum three characters
+window.addEventListener('DOMContentLoaded', (event) => {
+    const text = document.querySelector('#name');
+    const errorName = document.querySelector('#errormessage');
+    text.addEventListener('input',function(){
+        if(text.value.length == 0){
+            errorName.textContent = "";
+            return;
+        }
+        try { 
+            (new EmployeePayrollData()).name = text.value;
+            errorName.textContent = "";
+            text.style.border = '2px solid green';
+        }catch (e){
+            errorName.textContent = e;
+            text.style.border = '2px solid red';
+        }
+    });
 
-const NAME_REGEX = RegExp('^[A-Z]{1}[a-z]{2,}$');
-const text = document.querySelector('#name');
-const errorName = document.querySelector('#errormessage');
-text.addEventListener('input',function(){
-    if(NAME_REGEX.test(text.value)){
-        errorName.textContent = "";
-        text.style.border = '2px solid green';
-    }
-    else{ 
-        errorName.textContent = " NAME is incorrect";
-        text.style.border = '2px solid red';
-    }
+    const salaryValue = document.querySelector('.salary-output');
+    const salaryInputRange = document.querySelector('#salary');
+    salaryInputRange.addEventListener("input",(event) => {
+    salaryValue.textContent = salaryInputRange.value;
+    });
 });
 
 //UC9 - Save the details in local storage
