@@ -76,3 +76,27 @@ function save() {
     dateStr = "";
     notes.value = "";
 }
+
+/*UC5: Reset the Employee payroll form on clicking reset button*/
+const resetForm = ()=>{
+    setValue('#name','');
+    unsetSelectedValues('[name=profile]');
+    unsetSelectedValues('[name=gender]');
+    unsetSelectedValues('[class=checkbox]');
+    setValue('#salary','');
+    salaryValue.innerHTML = "400000";
+    setValue('#notes','');
+    setValue('#day','1');
+    setValue('#month','January');
+    setValue('#year','2023')
+}
+const unsetSelectedValues = (propertyValue) =>{
+    let allItems = document.querySelectorAll(propertyValue);
+    allItems.forEach(item=>{
+        item.checked=false;
+    });      
+}
+const setValue = (id,value) =>{
+    const element = document.querySelector(id);
+    element.value = value;
+}
