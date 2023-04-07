@@ -9,6 +9,23 @@ const nameInput = document.querySelector('#name');
 const nameError = document.querySelector('#errormessage');
 const notes = document.querySelector('#notes');
 
+// UC10 - User needs to enter a valid first name,
+// First name should start with capital letters and need to have minimum three characters
+
+const NAME_REGEX = RegExp('^[A-Z]{1}[a-z]{2,}$');
+const text = document.querySelector('#name');
+const errorName = document.querySelector('#errormessage');
+text.addEventListener('input',function(){
+    if(NAME_REGEX.test(text.value)){
+        errorName.textContent = "";
+        text.style.border = '2px solid green';
+    }
+    else{ 
+        errorName.textContent = " NAME is incorrect";
+        text.style.border = '2px solid red';
+    }
+});
+
 //UC9 - Save the details in local storage
 function save() {
     const picRadio = document.querySelector('input[name="profile"]:checked');
